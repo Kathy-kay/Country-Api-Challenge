@@ -2,6 +2,7 @@ import Search from "../components/Search";
 import Filter from "../components/Filter";
 
 const SearchFilter = () => {
+  
   return (
     <div
       className="max-container flex justify-between items-center 

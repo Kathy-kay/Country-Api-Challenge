@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import { useCountries } from "../components/countryapi";
 import CountryList from "../components/CountryList";
+import { UserContext } from "../context/UserContext";
 
 const CountrySection = () => {
   const { data: countries, isLoading, isError } = useCountries();
+  const { selectedRegion } = useContext(UserContext);
 
   if (isLoading) {
     return <h1>Loading...</h1>;
@@ -10,14 +13,18 @@ const CountrySection = () => {
   if (isError) {
     return <h1>Error fetching data</h1>;
   }
-  console.log(countries);
 
+  const filteredCountries = selectedRegion
+    ? countries.filter((country) => country.continents === selectedRegion)
+    : countries;
+
+  // console.log(filteredCountries);
   return (
     <section
-      className="mt-5 grid lg:grid-col-5 md:grid-cols-4 
+      className="mt-5 grid  md:grid-cols-4 
     sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-10"
     >
-      {countries.map((country) => (
+      {filteredCountries.map((country) => (
         <CountryList key={country.name.official} {...country} />
       ))}
     </section>

@@ -1,18 +1,26 @@
+import { useContext } from "react";
 import { useState } from "react";
 import { AiOutlineDown } from "react-icons/ai";
+import { UserContext } from "../context/UserContext";
 
 const Filter = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState("Filtered by Region");
+  const { setSelectedRegion } = useContext(UserContext);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
+  };
+  const handleRegionChange = (region) => {
+    setSelectedRegion(region);
   };
 
   const handleSelectOption = (option) => {
     setSelectedOption(option);
     setIsOpen(false);
+    handleRegionChange(option);
   };
+
   return (
     <div className="max-sm:pt-16 relative ">
       <button
