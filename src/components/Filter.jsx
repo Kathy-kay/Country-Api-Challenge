@@ -1,26 +1,19 @@
-import { useContext } from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { AiOutlineDown } from "react-icons/ai";
 import { UserContext } from "../context/UserContext";
 
-const Filter = () => {
+export default function Filter() {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("Filtered by Region");
-  const { setSelectedRegion } = useContext(UserContext);
+  const { setSelectedRegion, selectedRegion } = useContext(UserContext);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
-  const handleRegionChange = (region) => {
+
+  const handleSelectOption = (region) => {
     setSelectedRegion(region);
-  };
-
-  const handleSelectOption = (option) => {
-    setSelectedOption(option);
     setIsOpen(false);
-    handleRegionChange(option);
   };
-
   return (
     <div className="max-sm:pt-16 relative ">
       <button
@@ -28,7 +21,9 @@ const Filter = () => {
        bg-white px-8 py-4 rounded-lg shadow-sm sm:items-start max-w-[400px]"
         onClick={toggleDropdown}
       >
-        <h4 className="text-lg font-Nunito font-normal">{selectedOption}</h4>
+        <h4 className="text-lg font-Nunito font-normal">
+          {selectedRegion ? selectedRegion : "Filtered by Region"}
+        </h4>
         <AiOutlineDown />
       </button>
       {isOpen && (
@@ -55,22 +50,4 @@ const Filter = () => {
       )}
     </div>
   );
-};
-
-export default Filter;
-
-{
-  /* <select
-        name="filter"
-        className="w-[250px] p-4 outline-none border-none shadow-none"
-      >
-        <option value="" className="outline-none border-none mb-3">
-          Filter by Region {"    "}
-        </option>
-        <option value="">Africa</option>
-        <option value="">America</option>
-        <option value="">Asia</option>
-        <option value="">Europe</option>
-        <option value="">Oceania</option>
-      </select> */
 }

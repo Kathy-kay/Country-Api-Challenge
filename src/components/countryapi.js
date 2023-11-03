@@ -7,3 +7,13 @@ export const useCountries = () => {
     return response.data.slice(0, 20);
   });
 };
+
+export const useRegion = (region) => {
+  return useQuery(["countryRegion", region], async () => {
+    if (!region) return [];
+    const response = await axios.get(
+      `https://restcountries.com/v3.1/region/${region}`
+    );
+    return response.data.slice(0, 20);
+  });
+};
