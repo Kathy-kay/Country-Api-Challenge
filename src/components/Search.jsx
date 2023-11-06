@@ -1,8 +1,13 @@
+import { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 const Search = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
+
   const handleSearchSubmit = () => {
-    console.log("search");
+    navigate(`search/${searchTerm}`);
   };
 
   return (
@@ -17,6 +22,8 @@ const Search = () => {
         type="text"
         placeholder="Search for country..."
         className="input text-lg text-blue-text"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
       />
     </div>
   );
