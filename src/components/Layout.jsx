@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 
 const Layout = () => {
   return (
-    <div>
+    <div className="relative min-h-screen bg-light-gray overflow-hidden">
       <Navbar />
       <main>
         <Outlet />

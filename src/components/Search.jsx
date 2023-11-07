@@ -7,7 +7,9 @@ const Search = () => {
   const navigate = useNavigate();
 
   const handleSearchSubmit = () => {
+    if (searchTerm === "") return;
     navigate(`search/${searchTerm}`);
+    setSearchTerm("");
   };
 
   return (

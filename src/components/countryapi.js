@@ -19,13 +19,10 @@ export const useRegion = (region) => {
 };
 
 export const useCountrySearch = (name) => {
-  return (
-    useQuery(["countrySearch", name]),
-    async () => {
-      const response = await axios.get(
-        `https://restcountries.com/v3.1/${name}`
-      );
-      return response.data;
-    }
-  );
+  return useQuery(["countrySearch", name], async () => {
+    const response = await axios.get(
+      `https://restcountries.com/v3.1/name/${name}`
+    );
+    return response.data;
+  });
 };
