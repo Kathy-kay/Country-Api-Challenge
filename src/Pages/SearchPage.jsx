@@ -1,14 +1,10 @@
 import { useParams } from "react-router-dom";
-import { useCountrySearch } from "../components/countryapi";
+import { useCountryName } from "../components/countryapi";
 
 const SearchPage = () => {
   const { searchTerm } = useParams();
 
-  const {
-    data: countrySearch,
-    isLoading,
-    isError,
-  } = useCountrySearch(searchTerm);
+  const { data: country, isLoading, isError } = useCountryName(searchTerm);
 
   if (isLoading) {
     return <h1>Loading</h1>;
@@ -16,14 +12,13 @@ const SearchPage = () => {
   if (isError) {
     return <h1>Error loading data</h1>;
   }
-  console.log(countrySearch);
 
   return (
     <div className="sm:px-16 px-8 sm:py-24 py-32 text-center">
       <h2 className="font-bold text-3xl pt-12 sm:pt-40">
         Search Results for : <span className="capitalize">{searchTerm}</span>{" "}
       </h2>
-      {countrySearch.map((item) => (
+      {country.map((item) => (
         <div
           className="pt-20 flex items-center max-lg:flex-col gap-16"
           key={item.name.official}

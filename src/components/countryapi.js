@@ -18,8 +18,8 @@ export const useRegion = (region) => {
   });
 };
 
-export const useCountrySearch = (name) => {
-  return useQuery(["countrySearch", name], async () => {
+export const useCountryName = (name) => {
+  return useQuery(["country", name], async () => {
     const response = await axios.get(
       `https://restcountries.com/v3.1/name/${name}`
     );
