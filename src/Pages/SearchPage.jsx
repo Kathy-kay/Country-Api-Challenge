@@ -14,7 +14,7 @@ const SearchPage = () => {
   }
 
   return (
-    <div className="sm:px-16 px-8 sm:py-24 py-32 text-center">
+    <div className="sm:px-16 px-8 sm:py-24 py-32 text-center text:blue-text">
       <h2 className="font-bold text-3xl pt-12 sm:pt-40">
         Search Results for : <span className="capitalize">{searchTerm}</span>{" "}
       </h2>
@@ -29,7 +29,7 @@ const SearchPage = () => {
             width={500}
             height={500}
           />
-          <div className="flex lg:flex-row lg:justify-between flex-col flex-1">
+          <div className="flex lg:flex-row lg:justify-between flex-col flex-1 text-blue-text">
             <div className="flex flex-col items-start">
               <h2 className="font-bold font-Nunito mb-4 text-2xl">
                 {item.name.common}

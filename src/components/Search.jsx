@@ -15,7 +15,7 @@ const Search = () => {
   return (
     <div
       className=" w-full flex items-center 
-   border-white rounded-md bg-white max-xl:padding-x gap-4 p-4 lg:max-w-[40%] shadow-sm"
+   border-white rounded-md bg-white max-xl:padding-x gap-4 p-4 lg:max-w-[40%] shadow-sm dark:bg-dark-blue dark:text-light-White"
     >
       <button className="" onClick={handleSearchSubmit}>
         <AiOutlineSearch size={42} color="#D3D3D3" />
@@ -23,7 +23,7 @@ const Search = () => {
       <input
         type="text"
         placeholder="Search for country..."
-        className="input text-lg text-blue-text"
+        className="input text-lg text-blue-text dark:bg-dark-blue dark:text-light-White"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />

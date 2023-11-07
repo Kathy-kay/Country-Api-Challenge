@@ -15,10 +15,10 @@ export default function Filter() {
     setIsOpen(false);
   };
   return (
-    <div className="max-sm:pt-16 relative ">
+    <div className="max-sm:pt-16 relative dark:box-shadow ">
       <button
         className="flex justify-between items-center w-[250px]
-       bg-white px-8 py-4 rounded-lg shadow-sm sm:items-start max-w-[400px]"
+       bg-white px-8 py-4 rounded-lg shadow-sm sm:items-start max-w-[400px] dark:bg-dark-blue dark:text-light-White "
         onClick={toggleDropdown}
       >
         <h4 className="text-lg font-Nunito font-normal">
@@ -29,7 +29,7 @@ export default function Filter() {
       {isOpen && (
         <ul
           className="absolute left-0 mt-2 w-[250px]
-       bg-white px-8 py-4 rounded-md text-base shadow-sm font-Nunito cursor-pointer"
+       bg-white px-8 py-4 rounded-md text-base shadow-sm font-Nunito cursor-pointer dark:bg-dark-blue dark:text-light-White"
         >
           <li className="mb-1" onClick={() => handleSelectOption("Africa")}>
             Africa
