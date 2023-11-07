@@ -26,14 +26,14 @@ const CountryDetails = () => {
             width={500}
             height={500}
           />
-          <div className="flex lg:flex-row lg:justify-between flex-col flex-1 text-blue-text">
+          <div className="flex lg:flex-row lg:justify-between flex-col flex-1 text-blue-text dark:text-light-White">
             <div className="flex flex-col items-start">
               <h2 className="font-bold font-Nunito mb-4 text-2xl">
                 {item.name.common}
               </h2>
-              <p className="text-lg mb-3">
+              {/* <p className="text-lg mb-3">
                 Native Name: {item.name.nativeName.eng.common}
-              </p>
+              </p> */}
               <p className="text-lg mb-3">Population: {item.population}</p>
               <p className="text-lg mb-3">Region: {item.region}</p>
               <p className="text-lg mb-3">Sub Region: {item.subregion}</p>

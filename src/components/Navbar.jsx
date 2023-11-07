@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <header className="w-full py-8 absolute z-10 padding-x bg-white shadow-lg dark:bg-dark-blue ">
       <nav className="flex flex-1 justify-between items-center max-container ">
-        <h3 className="font-Nunito font-bold text-3xl text-blue-text dark:text-light-White">
+        <h3 className="font-Nunito font-bold text-3xl text-blue-text dark:text-light-White max-md:text-lg">
           Where in the world?
         </h3>
         <button

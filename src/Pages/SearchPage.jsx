@@ -14,8 +14,8 @@ const SearchPage = () => {
   }
 
   return (
-    <div className="sm:px-16 px-8 sm:py-24 py-32 text-center text:blue-text">
-      <h2 className="font-bold text-3xl pt-12 sm:pt-40">
+    <div className="sm:px-16 px-8 sm:py-24 py-32 text-center text:blue-text ">
+      <h2 className="font-bold text-3xl pt-12 sm:pt-40 dark:text-light-White">
         Search Results for : <span className="capitalize">{searchTerm}</span>{" "}
       </h2>
       {country.map((item) => (
@@ -29,7 +29,7 @@ const SearchPage = () => {
             width={500}
             height={500}
           />
-          <div className="flex lg:flex-row lg:justify-between flex-col flex-1 text-blue-text">
+          <div className="flex lg:flex-row lg:justify-between flex-col flex-1 text-blue-text dark:text-light-White">
             <div className="flex flex-col items-start">
               <h2 className="font-bold font-Nunito mb-4 text-2xl">
                 {item.name.common}
@@ -43,7 +43,7 @@ const SearchPage = () => {
               <p className="text-lg mb-3">Capital: {item.capital}</p>
             </div>
             <div className="mt-12 flex flex-col items-start max-lg:pt-5">
-              <p className="mb-3">Currency: {item.currencies.CAD.name}</p>
+              {/* <p className="mb-3">Currency: {item.currencies.CAD.name}</p> */}
               <p className="mb-3">
                 Languages: {item.languages.eng}, {item.languages.fra}
               </p>
